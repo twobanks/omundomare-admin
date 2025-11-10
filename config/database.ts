@@ -1,8 +1,6 @@
-// config/database.js (ou config/env/production/database.js)
 const parse = require('pg-connection-string').parse;
 
-// Cole a URL de conexão do Supabase aqui
-const connectionString = 'https://yyqovztxkkxdztxjiyhk.supabase.co'; 
+const connectionString = 'postgresql://postgres:d_*jYW/EHF6.2*d@db.yyqovztxkkxdztxjiyhk.supabase.co:5432/postgres;' 
 
 const config = parse(connectionString);
 
@@ -16,7 +14,7 @@ module.exports = ({ env }) => ({
       user: config.user,
       password: config.password,
       ssl: {
-        rejectUnauthorized: false // Necessário para conexões remotas
+        rejectUnauthorized: false 
       },
     },
     debug: false,
